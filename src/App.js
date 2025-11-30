@@ -210,9 +210,9 @@ const App = () => {
                <p className="text-gray-500">No images found. Please add images to <br/> <code>src/assets/dataset/before</code> and <code>src/assets/dataset/after</code></p>
             </div>
           ) : (
-            <div className="space-y-12">
+            <div className="space-y-12 ">
                {galleryItems.map((item, index) => (
-                 <div key={index} className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                 <div key={index} className="bg-white rounded-3xl border-2 border-indigo-900 shadow-xl overflow-hidden border border-gray-100">
                     <div className="bg-gray-50 px-6 py-4 border-b border-gray-100">
                       <h3 className="font-bold text-xl text-gray-800 capitalize tracking-wide">{item.name}</h3>
                     </div>
