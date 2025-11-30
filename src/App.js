@@ -424,7 +424,7 @@ const App = () => {
 
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             {/* WhatsApp Card */}
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex-1 max-w-sm bg-indigo-800 p-8 rounded-2xl hover:bg-indigo-700 transition-colors flex flex-col items-center text-center shadow-xl border border-indigo-700/50">
+            <a href="https://wa.me/923102454227" target="_blank" rel="noopener noreferrer" className="flex-1 max-w-sm bg-indigo-800 p-8 rounded-2xl hover:bg-indigo-700 transition-colors flex flex-col items-center text-center shadow-xl border border-indigo-700/50">
               <div className="bg-green-500 p-4 rounded-full text-white mb-4 shadow-lg">
                 <MessageCircle size={32} />
               </div>
@@ -433,7 +433,7 @@ const App = () => {
             </a>
 
             {/* Email Card */}
-            <a href="mailto:hello@lifestyleai.com" className="flex-1 max-w-sm bg-indigo-800 p-8 rounded-2xl hover:bg-indigo-700 transition-colors flex flex-col items-center text-center shadow-xl border border-indigo-700/50">
+            <a href="m.zubairtahir000714@gmail.com" className="flex-1 max-w-sm bg-indigo-800 p-8 rounded-2xl hover:bg-indigo-700 transition-colors flex flex-col items-center text-center shadow-xl border border-indigo-700/50">
               <div className="bg-blue-500 p-4 rounded-full text-white mb-4 shadow-lg">
                 <Mail size={32} />
               </div>
