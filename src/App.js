@@ -10,10 +10,7 @@ import {
   X, 
   Zap,
   Mail,
-  Instagram,
-  Twitter,
   MessageCircle,
-  Phone
 } from 'lucide-react';
 
 // === HELPER FUNCTION: Images load karne ke liye ===
@@ -49,7 +46,7 @@ const App = () => {
 
       setGalleryItems(items);
     } catch (error) {
-      console.error("Images load nahi ho payin. Make sure folders exist: src/assets/dataset/before & after", error);
+      console.error("Images load nahi ho payin.", error);
     }
   }, []);
 
@@ -119,7 +116,7 @@ const App = () => {
         )}
       </nav>
 
-      {/* Hero Section (UPDATED DESIGN) */}
+      {/* Hero Section */}
       <section className="relative pt-32 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         
         {/* Animated Background Image */}
@@ -202,9 +199,9 @@ const App = () => {
         </div>
       </section>
 
-      {/* Our Work Section (Dynamic) */}
+      {/* Our Work Section (UPDATED: MATCHING HERO SIZE & RATIO) */}
       <section id="work" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900">Our Work</h2>
             <p className="mt-4 text-gray-600">See the transformation power of our AI technology</p>
@@ -216,22 +213,40 @@ const App = () => {
                <p className="text-gray-500">No images found. Please add images to <br/> <code>src/assets/dataset/before</code> and <code>src/assets/dataset/after</code></p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-12">
                {galleryItems.map((item, index) => (
-                 <div key={index} className="bg-white p-4 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                   <div className="grid grid-cols-2 gap-2 mb-4">
-                     {/* Before Image */}
-                     <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden border border-gray-200">
-                       <span className="absolute top-2 left-2 bg-black/60 text-white text-[10px] px-2 py-1 rounded font-medium">BEFORE</span>
-                       <img src={item.before} alt={`${item.name} Before`} className="w-full h-full object-contain p-4 mix-blend-multiply" />
-                     </div>
-                     {/* After Image */}
-                     <div className="relative aspect-square rounded-lg overflow-hidden">
-                       <span className="absolute top-2 left-2 bg-indigo-600 text-white text-[10px] px-2 py-1 rounded font-medium z-10">AFTER</span>
-                       <img src={item.after} alt={`${item.name} After`} className="w-full h-full object-cover" />
-                     </div>
-                   </div>
-                   <h3 className="font-bold text-lg text-gray-900 capitalize">{item.name}</h3>
+                 <div key={index} className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                    <div className="bg-gray-50 px-6 py-4 border-b border-gray-100">
+                      <h3 className="font-bold text-xl text-gray-800 capitalize tracking-wide">{item.name}</h3>
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                      {/* Left: Original Product */}
+                      <div className="p-6 relative">
+                        <span className="absolute top-6 left-6 z-10 bg-black text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider">Before</span>
+                        {/* UPDATED: aspect-square to match hero section */}
+                        <div className="aspect-square bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
+                          <img 
+                            src={item.before} 
+                            alt={`${item.name} Before`} 
+                            className="w-3/4 h-3/4 object-contain mix-blend-multiply hover:scale-105 transition-transform duration-500" 
+                          />
+                        </div>
+                      </div>
+
+                      {/* Right: Influencer Ad */}
+                      <div className="p-6 relative">
+                        <span className="absolute top-6 left-6 z-10 bg-gray-900 text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-wider shadow-lg">After</span>
+                        {/* UPDATED: aspect-square to match hero section */}
+                        <div className="aspect-square bg-gray-50 rounded-xl overflow-hidden">
+                          <img 
+                            src={item.after} 
+                            alt={`${item.name} After`} 
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                          />
+                        </div>
+                      </div>
+                    </div>
                  </div>
                ))}
             </div>
@@ -401,88 +416,39 @@ const App = () => {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-indigo-900 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-10">
             <h2 className="text-3xl font-bold mb-4">Ready to transform your images?</h2>
-            <p className="text-indigo-200">Get in touch with us via WhatsApp, Email, or the form below.</p>
+            <p className="text-indigo-200">Get in touch with us instantly.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Contact Info Cards */}
-            <div className="md:col-span-1 space-y-4">
-              {/* WhatsApp Card */}
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="block bg-indigo-800 p-6 rounded-2xl hover:bg-indigo-700 transition-colors flex items-center space-x-4">
-                <div className="bg-green-500 p-3 rounded-full text-white">
-                  <MessageCircle size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">WhatsApp</h3>
-                  <p className="text-indigo-200 text-sm">Chat with us instantly</p>
-                </div>
-              </a>
-
-              {/* Email Card */}
-              <a href="mailto:hello@lifestyleai.com" className="block bg-indigo-800 p-6 rounded-2xl hover:bg-indigo-700 transition-colors flex items-center space-x-4">
-                <div className="bg-blue-500 p-3 rounded-full text-white">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg">Email Us</h3>
-                  <p className="text-indigo-200 text-sm">hello@lifestyleai.com</p>
-                </div>
-              </a>
-              
-              <div className="bg-indigo-800 p-6 rounded-2xl">
-                 <div className="flex items-center space-x-4 mb-2">
-                    <div className="bg-purple-500 p-3 rounded-full text-white">
-                      <Phone size={24} />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg">Call Us</h3>
-                    </div>
-                 </div>
-                 <p className="text-indigo-200 text-sm">+1 (555) 123-4567</p>
-                 <p className="text-indigo-300 text-xs mt-1">Mon-Fri, 9am-6pm EST</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-6">
+            {/* WhatsApp Card */}
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="flex-1 max-w-sm bg-indigo-800 p-8 rounded-2xl hover:bg-indigo-700 transition-colors flex flex-col items-center text-center shadow-xl border border-indigo-700/50">
+              <div className="bg-green-500 p-4 rounded-full text-white mb-4 shadow-lg">
+                <MessageCircle size={32} />
               </div>
-            </div>
+              <h3 className="font-bold text-xl mb-2">WhatsApp</h3>
+              <p className="text-indigo-200">Chat with us instantly for a quick quote.</p>
+            </a>
 
-            {/* Contact Form */}
-            <div className="md:col-span-2 bg-indigo-800 rounded-3xl p-8 shadow-2xl">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-indigo-200 mb-2">Name</label>
-                    <input type="text" className="w-full px-4 py-3 rounded-lg bg-indigo-900 border border-indigo-700 text-white focus:outline-none focus:border-indigo-400" placeholder="John Doe" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-indigo-200 mb-2">Email</label>
-                    <input type="email" className="w-full px-4 py-3 rounded-lg bg-indigo-900 border border-indigo-700 text-white focus:outline-none focus:border-indigo-400" placeholder="john@example.com" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-indigo-200 mb-2">Message or Project Details</label>
-                  <textarea rows="4" className="w-full px-4 py-3 rounded-lg bg-indigo-900 border border-indigo-700 text-white focus:outline-none focus:border-indigo-400" placeholder="I have 50 shoe images I need lifestyle shots for..."></textarea>
-                </div>
-                <button type="button" className="w-full bg-white text-indigo-900 font-bold py-4 rounded-lg hover:bg-gray-100 transition-colors">
-                  Send Message
-                </button>
-              </form>
-            </div>
+            {/* Email Card */}
+            <a href="mailto:hello@lifestyleai.com" className="flex-1 max-w-sm bg-indigo-800 p-8 rounded-2xl hover:bg-indigo-700 transition-colors flex flex-col items-center text-center shadow-xl border border-indigo-700/50">
+              <div className="bg-blue-500 p-4 rounded-full text-white mb-4 shadow-lg">
+                <Mail size={32} />
+              </div>
+              <h3 className="font-bold text-xl mb-2">Email Us</h3>
+              <p className="text-indigo-200">Send us your requirements via email.</p>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-gray-50 py-12 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-center items-center">
           <div className="mb-4 md:mb-0">
-            <span className="text-xl font-bold text-gray-900">LifestyleAI</span>
             <p className="text-sm text-gray-500 mt-1">© 2025 LifestyleAI Inc. All rights reserved.</p>
-          </div>
-          <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-indigo-600"><Instagram size={20} /></a>
-            <a href="#" className="text-gray-400 hover:text-indigo-600"><Twitter size={20} /></a>
-            <a href="#" className="text-gray-400 hover:text-indigo-600"><Mail size={20} /></a>
           </div>
         </div>
       </footer>
