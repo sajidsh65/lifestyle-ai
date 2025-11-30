@@ -232,7 +232,7 @@ const App = () => {
                      </div>
                    </div>
                    <h3 className="font-bold text-lg text-gray-900 capitalize">{item.name}</h3>
-                   <p className="text-gray-500 text-sm">AI Generated Lifestyle Transformation</p>
+                   <p className="text-gray-500 text-sm">Your Lifestyle Transformation</p>
                  </div>
                ))}
             </div>
