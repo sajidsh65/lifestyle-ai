@@ -152,9 +152,6 @@ const App = () => {
                 See Examples
             </button>
           </div>
-          <p className="mt-6 text-sm text-indigo-200/80">
-            <span className="font-semibold text-green-400">40% Off</span> Max Discount Available • 200+ Happy Clients
-          </p>
         </div>
 
         {/* Visual Transformation Demo (Hero Image) */}
@@ -271,9 +268,9 @@ const App = () => {
               <div className="w-24 h-24 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-white shadow-lg">
                 <Upload size={32} className="text-indigo-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">1. Upload & Describe</h3>
+              <h3 className="text-xl font-bold mb-3">1. Share & Describe</h3>
               <p className="text-gray-600 px-4">
-                Upload your raw product images and tell us your vision. Describe the setting, mood, or context you want.
+                Share your raw product images and tell us your vision. Describe the setting, mood, or context you want.
               </p>
             </div>
 
@@ -284,7 +281,7 @@ const App = () => {
               </div>
               <h3 className="text-xl font-bold mb-3">2. AI Generation</h3>
               <p className="text-gray-600 px-4">
-                Our advanced AI models place your product into hyper-realistic lifestyle scenes that match your brand.
+                We will place your product into hyper-realistic lifestyle scenes that match your brand.
               </p>
             </div>
 
@@ -293,7 +290,7 @@ const App = () => {
               <div className="w-24 h-24 bg-indigo-50 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-white shadow-lg">
                 <Download size={32} className="text-indigo-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">3. Review & Download</h3>
+              <h3 className="text-xl font-bold mb-3">3. Review & Delivery</h3>
               <p className="text-gray-600 px-4">
                 Receive your high-res lifestyle shots. Use them immediately for ads, social media, and your store.
               </p>
@@ -433,7 +430,7 @@ const App = () => {
             </a>
 
             {/* Email Card */}
-            <a href="m.zubairtahir000714@gmail.com" className="flex-1 max-w-sm bg-indigo-800 p-8 rounded-2xl hover:bg-indigo-700 transition-colors flex flex-col items-center text-center shadow-xl border border-indigo-700/50">
+            <a href="mailto:m.zubairtahir000714@gmail.com" className="flex-1 max-w-sm bg-indigo-800 p-8 rounded-2xl hover:bg-indigo-700 transition-colors flex flex-col items-center text-center shadow-xl border border-indigo-700/50">
               <div className="bg-blue-500 p-4 rounded-full text-white mb-4 shadow-lg">
                 <Mail size={32} />
               </div>
